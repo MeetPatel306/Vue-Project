@@ -1,5 +1,5 @@
 <script setup>
-import { PulseLoader } from 'vue-spinner';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import BackButton from '@/components/BackButton.vue';
 import { reactive, onMounted } from 'vue';
 import { useRoute, RouterLink, useRouter } from 'vue-router';
