@@ -13,9 +13,9 @@ const toggleFullDescription = () => {
 };
 
 const truncatedDescription = computed(() => {
-  const description = props.job?.description ?? '';
-  if (!showFullDescription.value && description.length > 90) {
-    return description.substring(0, 90) + '...';
+  let description = props.job.description;
+  if (!showFullDescription.value) {
+    description = description.substring(0, 90) + '...';
   }
   return description;
 });
@@ -34,7 +34,6 @@ const truncatedDescription = computed(() => {
           {{ truncatedDescription }}
         </div>
         <button
-          v-if="props.job?.description?.length > 90"
           @click="toggleFullDescription"
           class="text-green-500 hover:text-green-600 mb-5"
         >
